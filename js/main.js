@@ -64,23 +64,14 @@ pic[activeElement].classList.add('active');
 title[activeElement].classList.add('active');
 txt[activeElement].classList.add('active');
 
-
-
-
-
 // seleziono la freccia che permetterà di mostrare le img una dopo l'altra
-
 let arrowUp = document.querySelector('.arrow-top');
 let arrowDown = document.querySelector('.arrow-bottom');
-
-
-
-
 
 // Al click dell’utente sulle frecce, il programma cambierà l’immagine attiva, che quindi verrà visualizzata al posto della precedente.
 
 
-// funzione al click
+// funzione al click freccia sopra
 arrowUp.addEventListener('click',
 function() {
     // togli la classe active all'elemento attivo in quel momento
@@ -95,7 +86,7 @@ if(activeElement == pic.length - 1 && title.length -1 && txt.length -1)
 }
  // passare alla foto successiva
  activeElement ++;
-   // alla foto successiva aggiungere la classe active
+   // agli elementi aggiungere la classe active
    pic[activeElement].classList.add('active');
    title[activeElement].classList.add('active');
    txt[activeElement].classList.add('active');
@@ -104,7 +95,7 @@ if(activeElement == pic.length - 1 && title.length -1 && txt.length -1)
 )
 
 
-
+// funzione al click freccia sotto
 arrowDown.addEventListener('click',
 function() {
     // togli la classe active all'elemento attivo in quel momento
@@ -112,7 +103,7 @@ function() {
     title[activeElement].classList.remove('active');
     txt[activeElement].classList.remove('active');
     
-if(activePhoto == 0)
+if(activeElement == 0)
 {
     activeElement = pic.length;
     activeElement = title.length;
@@ -120,9 +111,9 @@ if(activePhoto == 0)
 
  
 }
- // passare alla foto successiva
+ // passare al elemento successivo
  activeElement --;
-   // alla foto successiva aggiungere la classe active
+   // agli elementi aggiungere la classe active
    pic[activeElement].classList.add('active');
    title[activeElement].classList.add('active');
    txt[activeElement].classList.add('active');

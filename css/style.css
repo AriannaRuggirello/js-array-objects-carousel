@@ -10,7 +10,7 @@
 }
 
 .slider{
-    width: 70vh;
+    max-width: 70vh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -18,13 +18,25 @@
 }
 
 img{
-    max-width: 100%;
-    object-fit: cover;
+    width: 100%;
+    object-fit: contain;
 }
 
+h2,p{
+    color: white;
+    position: absolute;
+    left: 20px;
+    bottom: 50px;
+}
+p{  
+    bottom: 50px;  
+}
+
+h2{
+    bottom: 100px;
+}
 
 .album{
-    
     position: relative;
     
 }
@@ -39,9 +51,9 @@ img{
 
 .arrow-top,
 .arrow-bottom{
+    color: white;
     position: absolute;
     left: 50%;
-    
     font-size: 30px;
     width: 40px;
     height: 40px;
