@@ -44,24 +44,89 @@ images.forEach((photo) => {
     // creo il div con all'interno l'immagine e i testi
     container.innerHTML +=`
     <div>
-    <img src=${photo.image}></img>
-    <h2>${photo.title}</h2>
-    <p>${photo.text}</p>
+    <img class='invisible' src=${photo.image}></img>
+    <h2 class='invisible'>${photo.title}</h2>
+    <p class='invisible'>${photo.text}</p>
     </div>`
-
-    // la prima immagine deve essere active
-    photo[0].classList.add('active');
-    
-    // imposto un indice per segnare la foto attiva al momento 
-    let activePhoto = 0;
-
-    //seleziono la freccia che permetterà di mostrare le img una dopo l'altra
-
-    let arrow = document.querySelector('.arrow-top');
-
-
-
-
 
 
 });
+// imposto un indice per segnare la foto attiva al momento 
+let activeElement = 0;
+// seleziono le foto per poterle gestire
+let pic = document.querySelectorAll('img');
+let title = document.querySelectorAll('h2');
+let txt = document.querySelectorAll('p');
+
+
+// la prima immagine deve essere active
+pic[activeElement].classList.add('active');
+title[activeElement].classList.add('active');
+txt[activeElement].classList.add('active');
+
+
+
+
+
+// seleziono la freccia che permetterà di mostrare le img una dopo l'altra
+
+let arrowUp = document.querySelector('.arrow-top');
+let arrowDown = document.querySelector('.arrow-bottom');
+
+
+
+
+
+// Al click dell’utente sulle frecce, il programma cambierà l’immagine attiva, che quindi verrà visualizzata al posto della precedente.
+
+
+// funzione al click
+arrowUp.addEventListener('click',
+function() {
+    // togli la classe active all'elemento attivo in quel momento
+    pic[activeElement].classList.remove('active');
+    title[activeElement].classList.remove('active');
+    txt[activeElement].classList.remove('active');
+    
+if(activeElement == pic.length - 1 && title.length -1 && txt.length -1)
+{
+    activeElement = -1;
+ 
+}
+ // passare alla foto successiva
+ activeElement ++;
+   // alla foto successiva aggiungere la classe active
+   pic[activeElement].classList.add('active');
+   title[activeElement].classList.add('active');
+   txt[activeElement].classList.add('active');
+
+}
+)
+
+
+
+arrowDown.addEventListener('click',
+function() {
+    // togli la classe active all'elemento attivo in quel momento
+    pic[activeElement].classList.remove('active');
+    title[activeElement].classList.remove('active');
+    txt[activeElement].classList.remove('active');
+    
+if(activePhoto == 0)
+{
+    activeElement = pic.length;
+    activeElement = title.length;
+    activeElement = txt.length;
+
+ 
+}
+ // passare alla foto successiva
+ activeElement --;
+   // alla foto successiva aggiungere la classe active
+   pic[activeElement].classList.add('active');
+   title[activeElement].classList.add('active');
+   txt[activeElement].classList.add('active');
+
+}
+)
+
