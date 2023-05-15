@@ -37,8 +37,8 @@ const images = [
     }
 ];
 
-let container = document.querySelector('div.slider');
-
+let container = document.querySelector('div.album');
+// Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per popolare dinamicamente il carosello.
 images.forEach((photo) => {
     
     // creo il div con all'interno l'immagine e i testi
@@ -49,13 +49,19 @@ images.forEach((photo) => {
     <p>${photo.text}</p>
     </div>`
 
-    // console.log(`
-    // <div>
-    // <img src=img/${photo.image}></img>
-    // <h2>${photo.title}</h2>
-    // <p>${photo.text}</p>
-    // </div>`)
-
+    // la prima immagine deve essere active
+    photo[0].classList.add('active');
     
-});
+    // imposto un indice per segnare la foto attiva al momento 
+    let activePhoto = 0;
 
+    //seleziono la freccia che permetterà di mostrare le img una dopo l'altra
+
+    let arrow = document.querySelector('.arrow-top');
+
+
+
+
+
+
+});

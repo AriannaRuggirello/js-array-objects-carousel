@@ -23,6 +23,19 @@ img{
 }
 
 
+.album{
+    position: relative;
+    
+}
+
+.photo{
+    display: none;   
+}
+
+.active{
+    display: block;
+}
+
 .arrow-top,
 .arrow-bottom{
     position: absolute;
